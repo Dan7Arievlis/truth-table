@@ -40,7 +40,7 @@ truthTable expression =
     putStrLn "----------------------------------------------------"
     main
       where
-          len = tamanho set
+          len = size set
           set = addAll list new False
           list = listVar expression
           table = makeTable expression (2^len) len set
@@ -135,8 +135,8 @@ add var (Node setL (a,b) setR) bool
 addAll [e] set bool = add e set bool
 addAll (a:b) set bool = add a (addAll b set bool) bool
 
-tamanho Empty = 0
-tamanho (Node setL (a,b) setR) = tamanho setL + 1 + tamanho setR
+size Empty = 0
+size (Node setL (a,b) setR) = size setL + 1 + size setR
 
 getBool var (Node setL (a,b) setR)
   | var > a = getBool var setR
