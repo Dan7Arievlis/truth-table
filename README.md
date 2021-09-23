@@ -20,7 +20,7 @@ Variavel* = Var Nome
 * Variaveis devem ser nomeadas com apenas um caracter e sem uso de aspas simples ou duplas
 
 Digite uma expressao booleana seguindo as instrucoes acima (para sair, aperte ENTER):
-  > *Or (Var C) (And (Var B) (Not (Var A)))*
+  > Or (Var C) (And (Var B) (Not (Var A)))  -- input
 
 Tabela verdade:
 
