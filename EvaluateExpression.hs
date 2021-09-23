@@ -2,17 +2,6 @@ module EvaluateExpression (evaluate) where
 
 import Stack (Stack, new, push, pop, isEmpty)
 
-main :: IO ()
-main = 
-  do
-    putStr "Digite uma expressao: "
-    expression <- getLine
-    result <- evaluate expression
-    if result then
-      putStrLn "Sintaxe valida"
-    else
-      putStrLn "Sintaxe invalida"
-
 evaluate expression = evaluate' new expression
 
 evaluate' stack [] =
