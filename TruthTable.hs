@@ -16,7 +16,8 @@ main =
               "Ou = Or (Formula 1) (Formula 2)\n" ++ 
               "Variavel* = Var Nome\n\n" ++ 
               "* Variaveis devem ser nomeadas com apenas um caracter e sem uso de aspas simples ou duplas\n")
-    putStr "Digite uma expressao booleana seguindo as instrucoes acima (para sair, aperte ENTER): \n  > "
+    putStrLn "Digite uma expressao booleana seguindo as instrucoes acima (para sair, aperte ENTER): "
+    putStr   "  > "
     str <- getLine
     if str /= "" then 
       do 
