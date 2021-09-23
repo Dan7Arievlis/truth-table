@@ -20,17 +20,21 @@ Variavel* = Var Nome
 * Variaveis devem ser nomeadas com apenas um caracter e sem uso de aspas simples ou duplas
 
 Digite uma expressao booleana seguindo as instrucoes acima (para sair, aperte ENTER):
-  > Or (Var A) (And (Var B) (Not (Var B)))
+  > *Or (Var C) (And (Var B) (Not (Var A)))*
 
 Tabela verdade:
 
-A      |  B      |  (A)+((B).(~(B)))
-True   |  True   |  True
-True   |  False  |  True
-False  |  True   |  False
-False  |  False  |  False
+A      |  B      |  C      |  (C)+((B).(~(A)))
+True   |  True   |  True   |  True
+True   |  True   |  False  |  False
+True   |  False  |  True   |  True
+True   |  False  |  False  |  False
+False  |  True   |  True   |  True
+False  |  True   |  False  |  True
+False  |  False  |  True   |  True
+False  |  False  |  False  |  False
 
 
 Tautologia: False
 
-----------------------------------------------------```
+----------------------------------------------------
