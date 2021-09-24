@@ -1,4 +1,8 @@
-module Set (new, add, addAll, size, getBool) where
+module Set (Set (Empty, Node), new, add, addAll, size, getBool, toList) where
+
+data Set = Empty | Node Set (String, Bool) Set deriving (Show)
+
+new = Empty
 
 add var Empty bool = Node Empty (var,bool) Empty
 add var (Node setL (a,b) setR) bool
@@ -11,6 +15,9 @@ addAll (a:b) set bool = add a (addAll b set bool) bool
 
 size Empty = 0
 size (Node setL (a,b) setR) = size setL + 1 + size setR
+
+toList Empty = []
+toList (Node setL (a,b) setR) = toList setL ++ [(a,b)] ++ toList setR
 
 getBool var (Node setL (a,b) setR)
   | var > a = getBool var setR

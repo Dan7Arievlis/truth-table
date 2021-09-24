@@ -1,16 +1,9 @@
 module TruthTable where
 
-import Conditions (listVar)
 import EvaluateExpression (evaluate)
-import IO (format, printTable)
 import Set (new, size, addAll)
-import Table (makeTable)
-
-data Exp = String | Var String | Not Exp | And Exp Exp | Or Exp Exp deriving (Show, Read, Eq)
-
-data Set = Empty | Node Set (String, Bool) Set deriving (Show)
-
-new = Empty
+import IO (format, printTable)
+import Table (Exp, makeTable, listVar, isTautology)
 
 main = 
   do

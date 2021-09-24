@@ -1,5 +1,10 @@
 module IO (format, printTable) where
 
+import Table (printExp)
+import Set (Set (Empty, Node))
+
+-- data Set = Empty | Node Set (String, Bool) Set deriving (Show)
+
 format "" _ = ""
 format (c:s) word
   | word == "Var " = "\"" ++ [c] ++ "\"" ++ format s ""
@@ -21,8 +26,3 @@ printInput (a:b) = chart (show a) 5 ++ "  |  " ++ printInput b
 chart str n
   | n <= length str = str
   | otherwise = chart str (n-1) ++ " "
-
-printExp (Var var) = var
-printExp (Not expression) = "~(" ++ printExp expression ++ ")"
-printExp (Or  e1 e2) = "(" ++ printExp e1 ++ ")+(" ++ printExp e2 ++ ")"
-printExp (And e1 e2) = "(" ++ printExp e1 ++ ").(" ++ printExp e2 ++ ")"
