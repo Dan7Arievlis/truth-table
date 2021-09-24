@@ -3,7 +3,7 @@ module TruthTable where
 import Conditions (listVar)
 import EvaluateExpression (evaluate)
 import IO (format, printTable)
-import Set (size, addAll)
+import Set (new, size, addAll)
 import Table (makeTable)
 
 data Exp = String | Var String | Not Exp | And Exp Exp | Or Exp Exp deriving (Show, Read, Eq)
