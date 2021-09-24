@@ -1,4 +1,4 @@
-module Table (Exp, makeTable, printExp, listVar, isTautology) where
+module Table (Exp (Var, Not, And, Or), makeTable, listVar, isTautology) where
 
 import Set (Set, getBool, toList, add)
 
@@ -22,11 +22,6 @@ evaluateExp set (Var var) = getBool var set
 evaluateExp set (Not ex) = not (evaluateExp set ex)
 evaluateExp set (Or  e1 e2) = (evaluateExp set e1) || (evaluateExp set e2)
 evaluateExp set (And e1 e2) = (evaluateExp set e1) && (evaluateExp set e2)
-
-printExp (Var var) = var
-printExp (Not expression) = "~(" ++ printExp expression ++ ")"
-printExp (Or  e1 e2) = "(" ++ printExp e1 ++ ")+(" ++ printExp e2 ++ ")"
-printExp (And e1 e2) = "(" ++ printExp e1 ++ ").(" ++ printExp e2 ++ ")"
 
 isTautology = foldl (&&) True . map snd
 
