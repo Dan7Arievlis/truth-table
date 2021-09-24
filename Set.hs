@@ -1,4 +1,4 @@
-module Set (add, addAll, size, getBool) where
+module Set (new, add, addAll, size, getBool) where
 
 add var Empty bool = Node Empty (var,bool) Empty
 add var (Node setL (a,b) setR) bool
