@@ -24,7 +24,7 @@ printInput [] = ""
 printInput (a:b) = chart (show a) 5 ++ "  |  " ++ printInput b
 
 printExp (Var var) = var
-printExp (Not expression) = "~(" ++ printExp expression ++ ")"
+printExp (Not expression) = "(" ++ printExp expression ++ ")'"
 printExp (Or  e1 e2) = "(" ++ printExp e1 ++ ")+(" ++ printExp e2 ++ ")"
 printExp (And e1 e2) = "(" ++ printExp e1 ++ ").(" ++ printExp e2 ++ ")"
 
