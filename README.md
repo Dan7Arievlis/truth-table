@@ -24,7 +24,7 @@ Digite uma expressao booleana seguindo as instrucoes acima (para sair, aperte EN
 
 Tabela verdade:
 
-A      |  B      |  C      |  (C)+((B).(~(A)))
+A      |  B      |  C      |  (C)+((B).((A)'))
 True   |  True   |  True   |  True
 True   |  True   |  False  |  False
 True   |  False  |  True   |  True
